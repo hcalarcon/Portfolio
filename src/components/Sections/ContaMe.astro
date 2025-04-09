@@ -1,0 +1,182 @@
+---
+import Titulos from "../Titulos.astro";
+
+---
+
+<section id="contact" class="section">
+    <Titulos title="Ponte en Contacto"/>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3 class="contact-subtitle">Formulario de contacto</h3>
+        <form class="contact-form" action="https://formspree.io/f/xqapgojj" method="POST">
+          <div class="form-row">
+            <input name="nombre" type="text" required placeholder="Nombre" class="form-input" />
+            <input name="email" type="email" required placeholder="Email" class="form-input" />
+          </div>
+          <input name="asunto" required type="text" placeholder="Asunto" class="form-input" />
+          <textarea name="mensaje" required placeholder="Mensaje" class="form-textarea" rows="5"></textarea>
+          <button type="submit" class="form-button">Enviar consulta</button>
+          <p id="form-status" class="hidden"></p>
+          <input type="hidden" name="_redirect" value="https:patagoniandevs.com.ar" />
+        </form>
+      </div>
+      <div class="contact-card">
+        <h3 class="contact-subtitle">Hablemos</h3>
+        <p class="contact-description">
+          No dudes en contactarme para colaboraciones, consultas o simplemente para saludar. Siempre estoy abierto a conversar sobre nuevos proyectos y oportunidades.
+        </p>
+        <article class="contact-links">    
+          <p><i class="fas fa-envelope"></i> <a href="mailto:hernaldo.alar@gmail.com">hernaldo.alar@gmail.com</a></p>
+          <p><i class="fab fa-github"></i> <a href="https://github.com/hcalarcon" target="_blank">github.com/hcalarcon</a></p>
+          <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/hcalarcon" target="_blank">linkedin.com/in/hcalarcon</a></p>        
+        </article>
+      </div>
+    </div>
+  </section>
+  
+
+
+<style>
+    .contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+#form-status {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .success {
+    color: green;
+  }
+
+  .error {
+    color: red;
+  }
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 1px 10px;
+  color: #000;
+}
+
+.contact-subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.form-button {
+  background-color: #fff;
+  color: #9B05E0;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #eee;
+}
+
+.contact-description {
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+.contact-links p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.contact-links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+</style>
+<!-- 
+enviar por js para evitar el redireccionamiento
+<script type="module">
+  const form = document.querySelector(".contact-form");
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    
+    const data = new FormData(form);
+    const formObject = Object.fromEntries(data.entries());
+    console.log(formObject); // Log the form data for debugging
+    try {
+      const res = await fetch("https://formspree.io/f/xqapgojj", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formObject)
+      });
+      
+      if (res.ok) {
+        status.textContent = "¡Mensaje enviado con éxito!";
+        status.classList.remove("hidden", "error");
+        status.classList.add("success");
+        form.reset();
+      } else {
+        throw new Error("Error al enviar");
+      }
+    } catch (err) {
+      status.textContent = "Hubo un error al enviar tu mensaje.";
+      status.classList.remove("hidden", "success");
+      status.classList.add("error");
+    }
+  });
+</script> -->

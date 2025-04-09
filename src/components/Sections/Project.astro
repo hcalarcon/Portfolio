@@ -1,0 +1,59 @@
+---
+import CardProject from "../CardProject.astro";
+import Titulos from "../Titulos.astro";
+import webpet from "../../assets/webpet.webp";
+import apod from "../../assets/apod.webp";
+import codigo from "../../assets/qr.webp"
+import rankingapp from "../../assets/rankingapp.webp"
+
+const projects = [
+  {
+    title: 'Webpet',
+    description: 'Página web para el proyecto de practicas profesionalizantes',
+    imageSrc: webpet,
+    badges: ['HTML', 'CSS', 'JavaScript'],
+    demo: "https://hcalarcon.github.io/webpet/",
+    code: "https://github.com/hcalarcon/webpet ",
+    codigo: codigo
+  },
+  {
+    title: 'Ranking App',
+    description: 'App web para rankear el proceso de mis alumnos en el curso de JavaScript',
+    imageSrc: rankingapp,
+    badges: ['React', 'Express', 'Vercel', 'railway' ],
+    codigo:codigo,
+    code: "https://github.com/hcalarcon/RankignApp-React",
+    demo: "#"
+  },
+  {
+    title: 'APOD Nasa',
+    description: 'Es una app móvil que muestra la imagen astronómica del día publicada por la NASA. Permite explorar contenido educativo de forma visual y atractiva.',
+    imageSrc: apod,
+    badges: ['React Native', 'Expo'],
+    code: "https://github.com/hcalarcon/nasa_images",
+    usemodal: true,
+    codigo: codigo,
+  },
+];
+---
+
+<section id="projects" >
+  <Titulos title="Mis Proyectos" />
+  <div class="cardContainer">
+    {projects.map(p => <CardProject {...p} />)}
+  </div>
+</section>
+
+
+<style>
+  section{
+    width: 100%;
+  }
+  .cardContainer{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center;
+    align-items: stretch;
+  }
+</style>

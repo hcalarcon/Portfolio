@@ -1,0 +1,36 @@
+---
+import Titulos from "../Titulos.astro";
+import CardSkill from "./../CardSkill.astro";
+
+const activas = ["JavaScript", "React", "Astro", "HTML", "CSS", "Tailwind", "Git"];
+const conEstudiantes = ["React", "Express", "MongoDB", "Figma"];
+const aprendiendo = ["Python", "SQL", "Docker", "FastAPI"];
+---
+
+
+<section id="skill">
+    <Titulos title="Skill & Herramientas"/>
+    <div class="cardContainer">
+        <CardSkill title="Tecnologías que uso activamente" skills={activas} />
+        <CardSkill title="Con estudiantes y en proyectos" skills={conEstudiantes} />
+        <CardSkill title="Explorando y aprendiendo" skills={aprendiendo} />
+    </div>
+</section>
+
+
+<style>
+
+section{
+    min-height: 50vh;
+}
+  
+   .cardContainer {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-content: center;
+    justify-content: space-around;
+   }
+</style>

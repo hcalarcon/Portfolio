@@ -1,0 +1,134 @@
+---
+import Header from './../Header.astro';
+import { Image } from 'astro:assets';
+import foto from "../../assets/imagen.jpg"
+---
+
+
+<section id="Hero">
+    <Header />
+    <div class="container">
+        <div class="texto">
+            <h1>Cristian Alarcón</h1>
+            <p>Analista en Sistemas | Profesor | Programador jr</p>
+            <p>Cerrando la brecha entre la educación y el desarrollo práctico para crear soluciones innovadoras.</p>
+            <div class="botones">
+                <a href="#project" id="cta">Conoce mis proyectos</a>
+                <a href="#contact">Contáctame</a>
+            </div>
+        </div>
+            <div class="imagen">
+                <div class="cuadrado uno"></div>
+                <div class="cuadrado dos"></div>
+                <Image src={foto} alt="mi foto"  loading="eager">
+            </div>
+        
+    </div>
+</section>
+
+
+<style>
+    section{
+        min-height: 100vh;
+    }
+
+    .container {
+        width: 100%;
+        height: 80vh;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-content: center;
+        padding: 0 10px;
+    }
+
+    img{
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .cuadrado{
+        width: 300px;
+        height: 300px;
+        border-width: 1px;
+        position: absolute;
+    }
+
+    .uno{
+        border: dotted 2px rgb(90, 90, 90);
+        transform: rotate(10deg);
+        border-radius: 20px;
+    }
+
+    .dos{
+        border: dashed 2px white;
+        transform: rotate(15deg);
+        border-radius: 30px;
+    }
+
+    .texto, .imagen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    h1{
+        font-size: clamp(36px, 4vw, 64px);
+    }
+
+    .texto p:nth-child(2) {
+        font-size: clamp(18px, 2vw, 32px);
+    }
+
+    .botones {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+    }	
+
+    a {
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: white;
+        margin-right: 10px;
+        border: solid 1px #fff;
+    }
+
+    #cta{
+        background-color: white;
+        color:#9B05E0
+    }
+
+    a:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (width < 700px)
+{
+    .container{
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    img{
+        width: 260px;
+        height: 260px;
+        z-index: 100;
+    }
+
+    .imagen{
+        order: -1;
+    }
+
+    .cuadrado{
+        width: 250px;
+        height: 250px;
+    }
+}
+</style>

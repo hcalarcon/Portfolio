@@ -1,0 +1,67 @@
+---
+import CardExperiencies from "../CardExperiencies.astro";
+import Titulos from "../Titulos.astro";
+---
+
+<section id="teaching" class="section">
+    <Titulos title="Experiencia en Educación"/>
+    <div class="teaching-container">
+      <CardExperiencies title="MEP - Construcción de software" subtitle="E.P.E.T. N° 12 | 2023 - Actual" description="Como docente de la materia, guío a los estudiantes en el desarrollo de proyectos reales, fomentando el trabajo en equipo, la planificación ágil y la aplicación de buenas prácticas de programación. Enfoco las clases en la resolución de problemas, el uso de herramientas modernas y el aprendizaje a través de la experiencia práctica."/>
+      <CardExperiencies title="Profesor - Desarrollo web I" subtitle="E.P.E.T. N° 12 | 2023 - Actual" description=" Introduzco a los estudiantes en los fundamentos del diseño y desarrollo de sitios web estáticos, utilizando HTML, CSS y buenas prácticas de estructura semántica. A través de proyectos simples, aprenden a construir páginas accesibles, ordenadas y visualmente atractivas, sentando las bases para desarrollos más complejos."/>
+      <CardExperiencies title="Profesor - Practicas Profesionalizantes" subtitle="E.P.E.T. N° 12 | 2023 - Actual" description=" Acompaño a los estudiantes en el desarrollo de proyectos reales para clientes locales, aplicando conocimientos técnicos adquiridos durante la carrera. Fomentamos el trabajo en equipo, la comunicación con el cliente, la gestión del proyecto y la responsabilidad profesional, brindándoles su primera experiencia laboral en el ámbito del desarrollo de software."/>
+      <details>
+        <summary class="details-title">Más experiencias</summary>
+        <div class="details-content">
+          <CardExperiencies title="Docente - Sistemas Operativos II" subtitle="E.P.E.T. N° 12 | 2022 - Actual" description="Exploramos el diseño y funcionamiento de sistemas operativos distribuidos, abordando temas como comunicación entre procesos, sincronización, asignación de recursos y tolerancia a fallos. A través de ejemplos prácticos y simulaciones, los estudiantes comprenden cómo múltiples sistemas trabajan en conjunto como una sola unidad coherente."/>
+          <CardExperiencies title="Docente - Informatica Aplicada" subtitle="E.P.E.T. N° 12 | 2022 - 2023" description="Dicté clases de informática aplicada en el marco de la orientación en Electromecánica, enfocándome en el uso de herramientas clave para el diseño y análisis técnico. Los contenidos incluyeron Excel para cálculos y registros, SketchUp para modelado 3D básico, Autodesk Inventor y AutoCAD para dibujo técnico y diseño asistido por computadora."/>
+           <CardExperiencies title="Docente - Informatica" subtitle="C.P.E.M. N° 13 - 57 -28 | 2022 - 2023" description="Desempeñé el rol de docente en distintas instituciones educativas, enseñando conceptos básicos de informática, manejo de herramientas ofimáticas como Word y Excel, e introducción a la programación. Adapté los contenidos según el nivel de cada grupo, promoviendo el aprendizaje práctico y el desarrollo de competencias digitales esenciales."/>
+           <CardExperiencies title="Soporte Tegnológico" subtitle="Universidad Cuenca del Plata |2018 - 2020" description="Brindé soporte técnico en entornos educativos universitarios, colaborando en el mantenimiento de infraestructuras de red y plataformas virtuales. Mis tareas incluyeron la gestión y actualización de aulas virtuales, capacitación a docentes y personal administrativo sobre el uso de software institucional, y asistencia a estudiantes en el manejo de herramientas educativas digitales."
+        </div>
+      </details>
+      </div>
+      <div class="teaching-philosophy">
+        <h3 class="philosophy-title">Mi filosofia en la enseñanza</h3>
+        <p class="philosophy-text">
+          Creo en un enfoque práctico y basado en proyectos para la enseñanza de la programación. Al combinar el conocimiento teórico con aplicaciones prácticas, los estudiantes desarrollan una comprensión más profunda de los conceptos y sus implicaciones en el mundo real.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<style>
+    .section {
+  padding: 60px 20px;
+}
+
+/* Teaching Experience */
+.teaching-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  margin-top: 20px;
+}
+
+.teaching-philosophy {
+  margin-top: 40px;
+}
+
+.philosophy-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.philosophy-text {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.details-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+  color: #fff;
+}
+</style>
