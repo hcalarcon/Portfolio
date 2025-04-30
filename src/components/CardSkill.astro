@@ -1,43 +1,52 @@
 ---
-
-const {title, skills} = Astro.props
+const { title, skills } = Astro.props;
 ---
 
-
-<article class="cardSkill">
-    <h3>{title}</h3>
-    <ul>
-        {skills.map((sk) => <li>{sk}</li>)}
-      </ul>
+<article class="cardSkill card animate-on-scroll">
+  <h3>{title}</h3>
+  <ul>
+    {skills.map((sk) => <li>{sk}</li>)}
+  </ul>
 </article>
 
-
 <style>
-    .cardSkill {
-        width: 40%;
-        min-width: 350px;
-        max-width: 300px;
-        background-color: rgba(239, 239, 241, 0.192);
-        padding: 15px 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+  .cardSkill {
+    width: 40%;
+    min-width: 350px;
+    max-width: 300px;
+    background-color: rgba(239, 239, 241, 0.192);
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
 
-    ul{
-        margin: auto;
-        margin-top: 5px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 3px;
-        gap: 8px;
-    }
+  ul {
+    margin: auto;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 3px;
+    gap: 8px;
+  }
 
-    ul li {
-        list-style-type: none;
-        padding: 0 8px;
-        background-color: rgba(255, 255, 255, 0.61);
-        border-radius: 25px;
-        max-width: 100px;
-    }
+  ul li {
+    list-style-type: none;
+    padding: 0 8px;
+    background-color: rgba(255, 255, 255, 0.61);
+    border-radius: 25px;
+    max-width: 100px;
+  }
+
+  .card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.8s ease;
+  }
+  .visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 </style>
