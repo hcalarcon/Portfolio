@@ -3,7 +3,18 @@ let isOpen = false;
 ---
 
 <header>
-    <h1>&lt;HCA /&gt;</h1>
+    
+    <svg
+      viewBox="0 0 300 100"
+      class="logo-trazo"
+      xmlns="http://www.w3.org/2000/svg"
+      height="50"
+    >
+      <text x="30" y="40"  fill="none" stroke="white" >
+        &lt;HCA /&gt;
+      </text>
+    </svg>
+
     <button 
     class="hamburger" 
     onclick="toggleMenu()"
@@ -36,10 +47,27 @@ let isOpen = false;
     z-index: 10;
   }
 
-  h1 {
-    color: #fff;
-    font-size: 24px;
+ text {
+  stroke: white;
+  fill: transparent;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: dibujar 6s ease forwards,
+  rellenar 0.5s ease forwards 1.5s;
+  font-size: 40px;
+}
+
+@keyframes dibujar {
+  to {
+    stroke-dashoffset: 0;
   }
+}
+
+@keyframes rellenar {
+  to {
+    fill: white;
+  }
+}
 
   nav ul {
     list-style-type: none;
